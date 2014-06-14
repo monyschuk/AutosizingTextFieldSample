@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6157" systemVersion="14A237a" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A238x" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6157"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6154.17"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -11,7 +11,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target">
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="AutosizingTextFieldSample" customModuleProvider="target">
             <connections>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
@@ -670,11 +670,70 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
-            <view key="contentView" id="EiT-Mj-1SZ">
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1178"/>
+            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <splitView appearanceType="aqua" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NXj-VK-rC2">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                        <subviews>
+                            <customView id="Bqb-KC-ZCE">
+                                <rect key="frame" x="0.0" y="0.0" width="237" height="360"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <textField appearanceType="aqua" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1dT-Jg-XXb" customClass="AutosizingTextField" customModule="AutosizingTextField">
+                                        <rect key="frame" x="20" y="318" width="197" height="22"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="GNK-vg-xjo">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="1dT-Jg-XXb" firstAttribute="leading" secondItem="Bqb-KC-ZCE" secondAttribute="leading" constant="20" id="9cy-Nf-zME"/>
+                                    <constraint firstItem="1dT-Jg-XXb" firstAttribute="top" secondItem="Bqb-KC-ZCE" secondAttribute="top" constant="20" id="BDc-1Q-jrf"/>
+                                    <constraint firstAttribute="trailing" secondItem="1dT-Jg-XXb" secondAttribute="trailing" constant="20" id="tZk-Bc-x2H"/>
+                                </constraints>
+                            </customView>
+                            <customView id="9wW-YO-BXX">
+                                <rect key="frame" x="247" y="0.0" width="233" height="360"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <textField appearanceType="aqua" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ory-hZ-J5F" customClass="AutosizingTextField" customModule="AutosizingTextField">
+                                        <rect key="frame" x="20" y="318" width="197" height="22"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="PeQ-jt-0c8">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="multiline" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Ory-hZ-J5F" firstAttribute="top" secondItem="9wW-YO-BXX" secondAttribute="top" constant="20" id="FHm-8M-B08"/>
+                                    <constraint firstItem="Ory-hZ-J5F" firstAttribute="leading" secondItem="9wW-YO-BXX" secondAttribute="leading" constant="20" id="nW9-hr-f6X"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ory-hZ-J5F" secondAttribute="trailing" constant="20" id="vbs-e3-0H5"/>
+                                </constraints>
+                            </customView>
+                        </subviews>
+                        <holdingPriorities>
+                            <real value="250"/>
+                            <real value="250"/>
+                        </holdingPriorities>
+                    </splitView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="NXj-VK-rC2" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="Cah-K7-mCG"/>
+                    <constraint firstItem="NXj-VK-rC2" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="ETB-cm-04Z"/>
+                    <constraint firstAttribute="bottom" secondItem="NXj-VK-rC2" secondAttribute="bottom" id="XAS-0W-241"/>
+                    <constraint firstAttribute="trailing" secondItem="NXj-VK-rC2" secondAttribute="trailing" id="cZ7-x2-v98"/>
+                </constraints>
             </view>
+            <point key="canvasLocation" x="252" y="92"/>
         </window>
     </objects>
 </document>

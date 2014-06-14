@@ -11,18 +11,42 @@
 		4D81D5C8194CC52E00810FAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D81D5C7194CC52E00810FAD /* AppDelegate.swift */; };
 		4D81D5CA194CC52E00810FAD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D81D5C9194CC52E00810FAD /* Images.xcassets */; };
 		4D81D5CD194CC52E00810FAD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D81D5CB194CC52E00810FAD /* MainMenu.xib */; };
-		4D81D5D9194CC52E00810FAD /* AutosizingTextFieldSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D81D5D8194CC52E00810FAD /* AutosizingTextFieldSampleTests.swift */; };
+		4D81D5ED194CC57A00810FAD /* AutosizingTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D81D5EC194CC57A00810FAD /* AutosizingTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4D81D5FD194CC57A00810FAD /* AutosizingTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D81D5E8194CC57A00810FAD /* AutosizingTextField.framework */; };
+		4D81D5FE194CC57A00810FAD /* AutosizingTextField.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D81D5E8194CC57A00810FAD /* AutosizingTextField.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		4D81D613194CC65100810FAD /* AutosizingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D81D612194CC65100810FAD /* AutosizingTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4D81D5D3194CC52E00810FAD /* PBXContainerItemProxy */ = {
+		4D81D5FB194CC57A00810FAD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4D81D5B8194CC52E00810FAD /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4D81D5BF194CC52E00810FAD;
-			remoteInfo = AutosizingTextFieldSample;
+			remoteGlobalIDString = 4D81D5E7194CC57A00810FAD;
+			remoteInfo = AutosizingTextField;
+		};
+		4D81D5FF194CC57A00810FAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4D81D5B8194CC52E00810FAD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4D81D5E7194CC57A00810FAD;
+			remoteInfo = AutosizingTextField;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4D81D604194CC57A00810FAD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4D81D5FE194CC57A00810FAD /* AutosizingTextField.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4D81D5C0194CC52E00810FAD /* AutosizingTextFieldSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutosizingTextFieldSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -31,9 +55,10 @@
 		4D81D5C7194CC52E00810FAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D81D5C9194CC52E00810FAD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4D81D5CC194CC52E00810FAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		4D81D5D2194CC52E00810FAD /* AutosizingTextFieldSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutosizingTextFieldSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D81D5D7194CC52E00810FAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4D81D5D8194CC52E00810FAD /* AutosizingTextFieldSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutosizingTextFieldSampleTests.swift; sourceTree = "<group>"; };
+		4D81D5E8194CC57A00810FAD /* AutosizingTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutosizingTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D81D5EB194CC57A00810FAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D81D5EC194CC57A00810FAD /* AutosizingTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutosizingTextField.h; sourceTree = "<group>"; };
+		4D81D612194CC65100810FAD /* AutosizingTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutosizingTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,10 +66,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D81D5FD194CC57A00810FAD /* AutosizingTextField.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4D81D5CF194CC52E00810FAD /* Frameworks */ = {
+		4D81D5E4194CC57A00810FAD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -58,7 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				4D81D5C2194CC52E00810FAD /* AutosizingTextFieldSample */,
-				4D81D5D5194CC52E00810FAD /* AutosizingTextFieldSampleTests */,
+				4D81D5E9194CC57A00810FAD /* AutosizingTextField */,
 				4D81D5C1194CC52E00810FAD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,7 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				4D81D5C0194CC52E00810FAD /* AutosizingTextFieldSample.app */,
-				4D81D5D2194CC52E00810FAD /* AutosizingTextFieldSampleTests.xctest */,
+				4D81D5E8194CC57A00810FAD /* AutosizingTextField.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -75,9 +101,9 @@
 		4D81D5C2194CC52E00810FAD /* AutosizingTextFieldSample */ = {
 			isa = PBXGroup;
 			children = (
-				4D81D5C7194CC52E00810FAD /* AppDelegate.swift */,
-				4D81D5C9194CC52E00810FAD /* Images.xcassets */,
 				4D81D5CB194CC52E00810FAD /* MainMenu.xib */,
+				4D81D5C9194CC52E00810FAD /* Images.xcassets */,
+				4D81D5C7194CC52E00810FAD /* AppDelegate.swift */,
 				4D81D5C3194CC52E00810FAD /* Supporting Files */,
 			);
 			path = AutosizingTextFieldSample;
@@ -92,24 +118,36 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4D81D5D5194CC52E00810FAD /* AutosizingTextFieldSampleTests */ = {
+		4D81D5E9194CC57A00810FAD /* AutosizingTextField */ = {
 			isa = PBXGroup;
 			children = (
-				4D81D5D8194CC52E00810FAD /* AutosizingTextFieldSampleTests.swift */,
-				4D81D5D6194CC52E00810FAD /* Supporting Files */,
+				4D81D5EC194CC57A00810FAD /* AutosizingTextField.h */,
+				4D81D612194CC65100810FAD /* AutosizingTextField.swift */,
+				4D81D5EA194CC57A00810FAD /* Supporting Files */,
 			);
-			path = AutosizingTextFieldSampleTests;
+			path = AutosizingTextField;
 			sourceTree = "<group>";
 		};
-		4D81D5D6194CC52E00810FAD /* Supporting Files */ = {
+		4D81D5EA194CC57A00810FAD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4D81D5D7194CC52E00810FAD /* Info.plist */,
+				4D81D5EB194CC57A00810FAD /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4D81D5E5194CC57A00810FAD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D81D5ED194CC57A00810FAD /* AutosizingTextField.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		4D81D5BF194CC52E00810FAD /* AutosizingTextFieldSample */ = {
@@ -119,33 +157,36 @@
 				4D81D5BC194CC52E00810FAD /* Sources */,
 				4D81D5BD194CC52E00810FAD /* Frameworks */,
 				4D81D5BE194CC52E00810FAD /* Resources */,
+				4D81D604194CC57A00810FAD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4D81D5FC194CC57A00810FAD /* PBXTargetDependency */,
+				4D81D600194CC57A00810FAD /* PBXTargetDependency */,
 			);
 			name = AutosizingTextFieldSample;
 			productName = AutosizingTextFieldSample;
 			productReference = 4D81D5C0194CC52E00810FAD /* AutosizingTextFieldSample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4D81D5D1194CC52E00810FAD /* AutosizingTextFieldSampleTests */ = {
+		4D81D5E7194CC57A00810FAD /* AutosizingTextField */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4D81D5DF194CC52E00810FAD /* Build configuration list for PBXNativeTarget "AutosizingTextFieldSampleTests" */;
+			buildConfigurationList = 4D81D601194CC57A00810FAD /* Build configuration list for PBXNativeTarget "AutosizingTextField" */;
 			buildPhases = (
-				4D81D5CE194CC52E00810FAD /* Sources */,
-				4D81D5CF194CC52E00810FAD /* Frameworks */,
-				4D81D5D0194CC52E00810FAD /* Resources */,
+				4D81D5E3194CC57A00810FAD /* Sources */,
+				4D81D5E4194CC57A00810FAD /* Frameworks */,
+				4D81D5E5194CC57A00810FAD /* Headers */,
+				4D81D5E6194CC57A00810FAD /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4D81D5D4194CC52E00810FAD /* PBXTargetDependency */,
 			);
-			name = AutosizingTextFieldSampleTests;
-			productName = AutosizingTextFieldSampleTests;
-			productReference = 4D81D5D2194CC52E00810FAD /* AutosizingTextFieldSampleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
+			name = AutosizingTextField;
+			productName = AutosizingTextField;
+			productReference = 4D81D5E8194CC57A00810FAD /* AutosizingTextField.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -159,9 +200,8 @@
 					4D81D5BF194CC52E00810FAD = {
 						CreatedOnToolsVersion = 6.0;
 					};
-					4D81D5D1194CC52E00810FAD = {
+					4D81D5E7194CC57A00810FAD = {
 						CreatedOnToolsVersion = 6.0;
-						TestTargetID = 4D81D5BF194CC52E00810FAD;
 					};
 				};
 			};
@@ -178,8 +218,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				4D81D5E7194CC57A00810FAD /* AutosizingTextField */,
 				4D81D5BF194CC52E00810FAD /* AutosizingTextFieldSample */,
-				4D81D5D1194CC52E00810FAD /* AutosizingTextFieldSampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -194,7 +234,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4D81D5D0194CC52E00810FAD /* Resources */ = {
+		4D81D5E6194CC57A00810FAD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -213,21 +253,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4D81D5CE194CC52E00810FAD /* Sources */ = {
+		4D81D5E3194CC57A00810FAD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D81D5D9194CC52E00810FAD /* AutosizingTextFieldSampleTests.swift in Sources */,
+				4D81D613194CC65100810FAD /* AutosizingTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4D81D5D4194CC52E00810FAD /* PBXTargetDependency */ = {
+		4D81D5FC194CC57A00810FAD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4D81D5BF194CC52E00810FAD /* AutosizingTextFieldSample */;
-			targetProxy = 4D81D5D3194CC52E00810FAD /* PBXContainerItemProxy */;
+			target = 4D81D5E7194CC57A00810FAD /* AutosizingTextField */;
+			targetProxy = 4D81D5FB194CC57A00810FAD /* PBXContainerItemProxy */;
+		};
+		4D81D600194CC57A00810FAD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4D81D5E7194CC57A00810FAD /* AutosizingTextField */;
+			targetProxy = 4D81D5FF194CC57A00810FAD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -342,41 +387,49 @@
 			};
 			name = Release;
 		};
-		4D81D5E0194CC52E00810FAD /* Debug */ = {
+		4D81D602194CC57A00810FAD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AutosizingTextFieldSample.app/Contents/MacOS/AutosizingTextFieldSample";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = AutosizingTextFieldSampleTests/Info.plist;
+				INFOPLIST_FILE = AutosizingTextField/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		4D81D5E1194CC52E00810FAD /* Release */ = {
+		4D81D603194CC57A00810FAD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AutosizingTextFieldSample.app/Contents/MacOS/AutosizingTextFieldSample";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = AutosizingTextFieldSampleTests/Info.plist;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = AutosizingTextField/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -400,11 +453,11 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		4D81D5DF194CC52E00810FAD /* Build configuration list for PBXNativeTarget "AutosizingTextFieldSampleTests" */ = {
+		4D81D601194CC57A00810FAD /* Build configuration list for PBXNativeTarget "AutosizingTextField" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4D81D5E0194CC52E00810FAD /* Debug */,
-				4D81D5E1194CC52E00810FAD /* Release */,
+				4D81D602194CC57A00810FAD /* Debug */,
+				4D81D603194CC57A00810FAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
