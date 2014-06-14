@@ -49,7 +49,7 @@ class AutosizingTextField: NSTextField {
 
     // Autolayout
     
-    func geometryDidChange(notification: NSNotification!) {
+    func geometryDidChange(_: NSNotification!) {
         if multiline {
             self.preferredMaxLayoutWidth = NSWidth(self.bounds)
             self.invalidateIntrinsicContentSize()
@@ -72,7 +72,7 @@ class AutosizingTextField: NSTextField {
             if multiline {
                 // the field editor may scroll slightly during edits
                 // regardless of whether we specify the cell to be scrollable:
-                // as a result, we must fix width prior to calculating height
+                // as a result, we fix the field editor's width prior to calculating height
                 
                 let superview   = fieldEditor.superview as NSView
                 let superBounds = superview.bounds
@@ -107,6 +107,9 @@ class AutosizingTextField: NSTextField {
             let cell = self.cell() as NSTextFieldCell
             
             if multiline {
+                // oddly, this sometimes gives incorrect results - 
+                // if anyone has any ideas please issue a pull request
+                
                 size = cell.cellSizeForBounds(NSMakeRect(0, 0, NSWidth(bounds), CGFLOAT_MAX))
                 
                 size.width  = NSViewNoInstrinsicMetric
