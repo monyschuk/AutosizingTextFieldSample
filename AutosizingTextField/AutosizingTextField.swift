@@ -20,23 +20,28 @@ class AutosizingTextField: NSTextField {
     
     // Lifecycle
     
-    init(frame: NSRect) {
+    override init(frame: NSRect) {
         super.init(frame: frame)
         self.prepareAutosizingTextField()
     }
 
-    init(coder: NSCoder!)  {
+    required init(coder: NSCoder!)  {
         super.init(coder: coder)
         self.prepareAutosizingTextField()
     }
     
     func prepareAutosizingTextField() {
+        self.bordered           = false
+        self.focusRingType      = .None
+        self.drawsBackground    = false
+        self.lineBreakMode      = .ByTruncatingTail
+
         self.translatesAutoresizingMaskIntoConstraints = false
         
         let cell = self.cell() as NSTextFieldCell
         
-        cell.wraps          = multiline
-        cell.scrollable     = !multiline
+        cell.wraps              = multiline
+        cell.scrollable         = !multiline
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "geometryDidChange:", name: NSViewFrameDidChangeNotification, object: self)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "geometryDidChange:", name: NSViewBoundsDidChangeNotification, object: self)
@@ -63,20 +68,18 @@ class AutosizingTextField: NSTextField {
     }
     
     override var intrinsicContentSize: NSSize {
-    get {
         var size: NSSize
         let bounds = self.bounds
-
+        
         if let fieldEditor = self.currentEditor() as? NSTextView {
+            let fieldEditorSuperview = fieldEditor.superview!
             
             if multiline {
                 // the field editor may scroll slightly during edits
                 // regardless of whether we specify the cell to be scrollable:
                 // as a result, we fix the field editor's width prior to calculating height
                 
-                let superview   = fieldEditor.superview as NSView
-                let superBounds = superview.bounds
-                
+                let superBounds = fieldEditorSuperview.bounds
                 var frame       = fieldEditor.frame
                 
                 if NSWidth(frame) > NSWidth(superBounds) {
@@ -86,43 +89,42 @@ class AutosizingTextField: NSTextField {
                 }
             }
             
-            let textContainer = fieldEditor.textContainer
-            let layoutManager = fieldEditor.layoutManager
+            let textContainer   = fieldEditor.textContainer
+            let layoutManager   = fieldEditor.layoutManager
             
-            let usedRect    = layoutManager.usedRectForTextContainer(textContainer)
-            let clipRect    = self.convertRect(fieldEditor.superview.bounds, fromView: fieldEditor.superview)
+            let usedRect        = layoutManager.usedRectForTextContainer(textContainer)
+            let clipRect        = self.convertRect(fieldEditorSuperview.bounds, fromView: fieldEditor.superview)
             
-            let clipDelta   = NSSize(width: NSWidth(bounds) - NSWidth(clipRect), height:NSHeight(bounds) - NSHeight(clipRect))
+            let clipDelta       = NSSize(width: NSWidth(bounds) - NSWidth(clipRect), height:NSHeight(bounds) - NSHeight(clipRect))
             
             if multiline {
-                let minHeight = layoutManager.defaultLineHeightForFont(self.font)
+                let minHeight   = layoutManager.defaultLineHeightForFont(self.font)
                 
-                size = NSSize(width: NSViewNoInstrinsicMetric, height: max(NSHeight(usedRect), minHeight) + clipDelta.height)
+                size            = NSSize(width: NSViewNoInstrinsicMetric, height: max(NSHeight(usedRect), minHeight) + clipDelta.height)
                 
             } else {
-                size = NSSize(width: ceil(NSWidth(usedRect) + clipDelta.width), height: NSHeight(usedRect) + clipDelta.height)
+                size            = NSSize(width: ceil(NSWidth(usedRect) + clipDelta.width), height: NSHeight(usedRect) + clipDelta.height)
             }
-            
         } else {
             let cell = self.cell() as NSTextFieldCell
             
             if multiline {
-                // oddly, this sometimes gives incorrect results - 
+                // oddly, this sometimes gives incorrect results -
                 // if anyone has any ideas please issue a pull request
                 
-                size = cell.cellSizeForBounds(NSMakeRect(0, 0, NSWidth(bounds), CGFLOAT_MAX))
+                size        = cell.cellSizeForBounds(NSMakeRect(0, 0, NSWidth(bounds), CGFloat.max))
                 
                 size.width  = NSViewNoInstrinsicMetric
                 size.height = ceil(size.height)
                 
             } else {
-                size = cell.cellSizeForBounds(NSMakeRect(0, 0, CGFLOAT_MAX, CGFLOAT_MAX))
+                size        = cell.cellSizeForBounds(NSMakeRect(0, 0, CGFloat.max, CGFloat.max))
                 
-                size.width = ceil(size.width)
+                size.width  = ceil(size.width)
                 size.height = ceil(size.height)
             }
         }
         
         return size
-    }}
+    }
 }
